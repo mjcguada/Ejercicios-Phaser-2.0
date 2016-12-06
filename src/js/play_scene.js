@@ -18,9 +18,16 @@ var PlayScene = {
   create: function () {
       //Creamos al player con un sprite por defecto.
       //TODO 5 Creamos a rush 'rush'  con el sprite por defecto en el 10, 10 con la animación por defecto 'rush_idle01'
-      
+      this._rush = this.game.add.sprite(10, 10, 'rush');
+      var walk = this._rush.animations.add('rush_idle01');
+      this._rush.animations.play('walk', 30, true);
+
       //TODO 4: Cargar el tilemap 'tilemap' y asignarle al tileset 'patrones' la imagen de sprites 'tiles'
-      
+      this.map = this.game.load.tilemap('tilemap');
+      this.map.addTilesetImage('patrones', 'tiles');
+
+      ///////////////////this.game.add.tilemap('mario');
+
       //Creacion de las layers
       this.backgroundLayer = this.map.createLayer('BackgroundLayer');
       this.groundLayer = this.map.createLayer('GroundLayer');
@@ -132,6 +139,7 @@ var PlayScene = {
     
     onPlayerFell: function(){
         //TODO 6 Carga de 'gameOver';
+        this.game.state.start('gameOver');
     },
     
     checkPlayerFell: function(){
