@@ -14,9 +14,12 @@ var GameOver = {
         
         //TODO 8 crear un boton con el texto 'Return Main Menu' que nos devuelva al menu del juego.
     }
+    reiniciar:function(){
+        this.game.state.start('play');
+    }
     
     //TODO 7 declarar el callback del boton.
-
+    button.events.onInputDown.add(reiniciar, this); 
 };
 
 module.exports = GameOver;

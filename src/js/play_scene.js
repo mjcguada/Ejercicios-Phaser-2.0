@@ -18,7 +18,7 @@ var PlayScene = {
   create: function () {
       //Creamos al player con un sprite por defecto.
       //TODO 5 Creamos a rush 'rush'  con el sprite por defecto en el 10, 10 con la animación por defecto 'rush_idle01'
-      this._rush = this.game.add.sprite(10, 10, 'rush');
+      this._rush = this.game.add.sprite(10, 10, 'rush');      
       var walk = this._rush.animations.add('rush_idle01');
       this._rush.animations.play('walk', 30, true);
 
